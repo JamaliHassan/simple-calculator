@@ -16,7 +16,6 @@ const answer = await inquirer.prompt([
       "Multiplication",
       "Modulus",
       "Exponentiation",
-      ,
       "Percentage",
     ],
   },

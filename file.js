@@ -1,3 +1,4 @@
+#!  /usr/bin/env node
 import inquirer from "inquirer";
 const answer = await inquirer.prompt([
     { message: "Enter Your first Number", type: "number", name: "firstNumber" },
@@ -6,10 +7,17 @@ const answer = await inquirer.prompt([
         message: "Select Operator",
         type: "list",
         name: "operator",
-        choices: ["Addition", "Subtraction", "Division", "Multiplication", "Modulus", "Exponentiation", , "Percentage",],
+        choices: [
+            "Addition",
+            "Subtraction",
+            "Division",
+            "Multiplication",
+            "Modulus",
+            "Exponentiation",
+            "Percentage",
+        ],
     },
 ]);
-const { numberone, numbertwo, opertator } = answer;
 console.log(answer);
 if (answer.operator === "Addition") {
     console.log(answer.firstNumber + answer.secondNumber);
@@ -30,7 +38,7 @@ else if (answer.operator === "Exponentiation") {
     console.log(answer.firstNumber ** answer.secondNumber);
 }
 else if (answer.operator === "Percentage") {
-    console.log(answer.firstNumber / answer.secondNumber * 100);
+    console.log((answer.firstNumber / answer.secondNumber) * 100);
 }
 else {
     console.log("Please Select one of The Above Operator to Proceed the Operation");
